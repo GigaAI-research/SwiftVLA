@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta content="HSMR" name="title" />
+  <meta content="SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead" name="description" />
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta content="English" name="language" />
+  <meta content="Chaojun Ni" name="author" />
+  <title>SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead</title>
+  <!-- Bootstrap -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet" />
+
+  <!-- Add-ones -->
+  <script src="js/video-carousel.js"></script>
+  <script src="js/highlight-kw.js"></script>
+  <link href="css/highlight-kw.css" rel="stylesheet" />
+  <link href="css/theme.css" rel="stylesheet"/>
+
+  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet" />
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" rel="stylesheet" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/vlar1_logo.png">
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js"></script>
+
+  </link>
+</head>
+
+<body>
+  <!-- cover -->
+  <section>
+    <div class="jumbotron text-center mt-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 style="font-weight: bold">
+              <b>
+                <span style="color: #98BACB">Swift</span><span style="color: #CAB6A5">VLA</span><br>
+              </b>
+            </h1>
+            <!-- <h2>Unlocking <span style="color: #CAB6A5">Spatiotemporal Dynamics</span> for <span style="color: #98BACB">Lightweight VLA Models </span>   at Minimal Overhead</h2> -->
+           <div style="text-align: center;">
+              <h2>
+                Unlocking <span style="color: #CAB6A5">Spatiotemporal Dynamics</span> for <span style="color: #98BACB">Lightweight VLA Models</span><br>
+                at Minimal Overhead
+              </h2>
+            </div>
+
+            <!-- <h4 style="color:#5a6268;">Conference 2026</h4> -->
+            <hr>
+              <p>
+                <a href="#">Chaojun Ni</a><sup>1,2*</sup>&nbsp;
+                <a href="#">Cheng Chen</a><sup>3*</sup>&nbsp;
+                <a href="#">Xiaofeng Wang</a><sup>1,4*</sup>&nbsp;
+                <a href="http://www.zhengzhu.net/">Zheng Zhu</a><sup>1*†</sup>
+              </p>
+              <p>
+                  <!-- 第二行作者 -->
+                  <a href="#">Wenzhao Zheng</a><sup>4</sup>&nbsp;
+                  <a href="#">Boyuan Wang</a><sup>1</sup>&nbsp;
+                  <a href="#">Tianrun Chen</a><sup>3†</sup>&nbsp;
+                  <a href="#">Guosheng Zhao</a><sup>1</sup>&nbsp;
+                  <a href="#">Haoyun Li</a><sup>1</sup>
+              </p>
+              <p>
+                  <!-- 第三行作者 -->
+                  <a href="#">Zhehao Dong</a><sup>1,2</sup>&nbsp;
+                  <a href="#">Qiang Zhang</a><sup>5</sup>&nbsp;
+                  <a href="#">Yun Ye</a><sup>1</sup>&nbsp;
+                  <a href="#">Yang Wang</a><sup>1</sup>&nbsp;
+                  <a href="#">Guan Huang</a><sup>1</sup>&nbsp;
+                  <a href="#">Wenjun Mei</a><sup>2†</sup>
+              </p>
+
+              <!-- 机构与注释 -->
+              <p>
+                  <sup>1</sup> GigaAI &nbsp;&nbsp;&nbsp;
+                  <sup>2</sup> Peking University &nbsp;&nbsp;&nbsp;
+                  <sup>3</sup> Moxin (Huzhou) Technology Co., Ltd. &nbsp;&nbsp;&nbsp;
+                  <sup>4</sup> Tsinghua University &nbsp;&nbsp;&nbsp;
+                  <sup>5</sup> X-Humanoid <br>
+                  <sup>*</sup> Equal contribution. &nbsp;&nbsp;&nbsp;
+                  <sup>†</sup> Corresponding author.
+              </p>
+            <div class="row justify-content-center">
+
+               <div class="column" style="margin-right: 70px;">
+                <p class="mb-5">
+                  <a class="btn btn-large btn-light" href="https://arxiv.org/abs/2510.01623" role="button">
+                    <i class="fas fa-file-pdf"></i>
+                    <b>Paper</b>
+                  </a>
+                </p>
+              </div>
+
+              <div class="column">
+                <p class="mb-5">
+                  <a class="btn btn-large btn-light" href="https://github.com/GigaAI-research/SwiftVLA" role="button">
+                    <i class="fas fa-code"></i>
+                    <b>Code</b>
+                  </a>
+                </p>
+              </div>
+<!-- 
+              <div class="column">
+                <p class="mb-5">
+                  <a class="btn btn-large btn-light" href="#" role="button">
+                    <i class="fa fa-gamepad"></i>
+                    <b>Model</b>
+                  </a>
+                </p>
+              </div> -->
+
+              <!-- <div class="column">
+                <p class="mb-5">
+                  <a class="btn btn-large btn-light" href="#" role="button">
+                    <i class="fa fa-play"></i>
+                    <b>Dataset</b>
+                  </a>
+                </p>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+<p class="text-justify">
+  <strong>Abstract:</strong> Vision–Language–Action (VLA) models built on pretrained Vision–Language Models (VLMs) show strong potential but are limited in practicality due to their large parameter counts. To mitigate this issue, using a lightweight VLM has been explored, but it compromises spatiotemporal reasoning. Although some methods suggest that incorporating additional 3D inputs can help, they usually rely on large VLMs to fuse 3D and 2D inputs and still lack temporal understanding. Therefore, we propose <strong>SwiftVLA</strong> , an architecture that enhances a compact model with 4D understanding while preserving design efficiency. Specifically, our approach features a pretrained 4D visual geometry transformer with a temporal cache that incrementally extracts 4D features from 2D images. Then, to enhance the VLM's ability to exploit both 2D images and 4D features, we introduce <strong>Fusion Tokens</strong> , a set of learnable tokens trained with a future prediction objective to generate unified representations for action generation. Finally, we introduce a mask-and-reconstruct strategy that randomly masks 4D inputs to the VLM and trains the VLA to reconstruct the masked features. This self-reconstruction objective helps learn effective 4D representations, allowing the 4D branch to be dropped at inference with minimal performance loss. Extensive experiments in real and simulated environments show that <strong>SwiftVLA</strong>  outperforms lightweight baselines and rivals VLAs up to 7&times; larger. On edge devices, <strong>SwiftVLA</strong>  achieves comparable performance while being 18&times; faster than the &pi;<sub>0</sub> and reducing the memory footprint by 12&times;.
+</p>
+          <hr style="margin-top: 0px" />
+
+<p class="text-left">
+  <strong>SwiftVLA</strong> is a method that integrates 4D spatiotemporal information into a lightweight vision–language–action (VLA) model at minimal cost.<br>
+  (1) It extracts 4D features and adopts a mask-and-reconstruct training strategy that distills 4D knowledge into the VLA, enabling comparable performance during inference using only 2D inputs;<br>
+  (2) It fuses 2D and 4D features in a lightweight VLM via learnable <strong>Fusion Tokens</strong> , trained with supervision from the robot arm's future end-effector trajectory to produce a unified, action-aware representation;<br>
+  (3) Extensive experiments in simulation and on real robots demonstrate that <strong>SwiftVLA</strong>  achieves performance comparable to a baseline that is 7&times; larger, runs 18&times; faster, and uses 12&times; less memory than &pi;<sub>0</sub> on edge devices.
+</p>
+
+
+          <!-- <div id="TeaserVideos" style="text-align: center;">
+            <video autoplay muted loop playsinline controls style="max-width:80%; border-radius:8px;">
+              <source src="videos/teaser.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div> -->
+          <br>          
+          
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Methods -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3>Motivation</h3>
+          <hr style="margin-top: 0px" />
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <!-- 左侧：说明文字 -->
+        <div class="col-md-8">
+            <p style="text-align: justify;">
+             We find that smaller VLM models, such as SmolVLM-0.5B, perform noticeably worse on tasks that require spatial reasoning.
+              For instance, when answering questions like "What is the color of the leftmost bowl?", these smaller models often struggle 
+              to provide accurate answers compared to their larger counterparts. While models like SmolVLA, based on SmolVLM-0.5B, have a 
+              clear advantage in inference speed—especially when compared to more complex models like π<sub>0</sub> based on PaliGemma-3B—they significantly
+               lag behind in task success rate. This is primarily because manipulation tasks in real-world scenarios typically require stronger spatiotemporal reasoning abilities and a
+                deeper understanding of scene dynamics, which these smaller models are limited in handling.
+            </p>
+        </div>
+
+        <!-- 右侧：图片 -->
+        <div class="col-md-4 text-center">
+          <img src="img/motivation.png" 
+              class="img-fluid" 
+              style="border-radius: 8px; max-width: 100%; height: auto;" 
+              alt="Overall architecture of VLA-R1" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <section style="margin-top: 40px">
+      <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h3>Architecture Comparison</h3>
+              <hr style="margin-top: 0px" />
+            </div>
+          </div>
+
+            <hr style="margin-top: 0px" />        
+              <p style="text-align: justify">
+                  Recent works explore integrating 3D and 4D information into VLA models to enhance perception.  
+                  As shown in Fig. (b), some fuse 3D features with 2D representations using large VLMs, improving spatial awareness but still relying on heavy models. 
+                  Others in Fig. (c) decouple 3D processing with an additional branch, increasing parameter overhead and making them unsuitable for compact models.
+
+However, as shown in Fig. (d), <strong>SwiftVLA</strong>  utilizes 4D representations as auxiliary inputs and employs a reconstruction objective to learn the spatiotemporal dynamics of 4D features. This enables the model to discard the 4D representations during inference while maintaining performance comparable to using the full 4D inputs.
+              </p>
+
+          
+
+            <div style="display: flex; justify-content: center;">
+              <img src="img/Architectural.png" style="max-width:80%; border-radius:8px; margin-top: 20px;" />
+            </div>
+
+              <p style="text-align: justify; max-width: 100%; margin: 0 auto; margin-bottom: 20px;">
+                <!-- <strong>Architecture Comparison.</strong> -->
+
+                        (a) Using only 2D features as input to the VLM, which results in limited spatiotemporal awareness. 
+                        (b) Direct fusion approaches combine spatial and 2D features within large VLMs. 
+                        (c) Decoupled designs that introduce a dedicated spatial branch, causing large parameter overhead. 
+                        (d) <strong>SwiftVLA</strong>  leverages a pretrained model to extract 4D features and applies a feature reconstruction objective to align 4D and 2D representations. In addition, <strong>Fusion Tokens</strong>  and a future prediction objective are introduced to strengthen cross-modal integration. The 4D inputs and auxiliary heads are removed at inference to maintain efficiency.
+              </p>
+        </div>
+      </div>
+    </section>
+
+
+
+  <!-- Methods -->
+<section style="margin-top: 40px">
+  <div class="container">
+
+      <div class="row">
+        <div class="col-12">
+          <h3>The Pipeline of SwiftVLA</h3>
+          <hr style="margin-top: 0px" />
+        </div>
+      </div>
+
+        <hr style="margin-top: 0px" />
+        
+        <div style="display: flex; justify-content: center;">
+          <img src="img/pipeline.png" style="max-width:80%; border-radius:8px; margin-top: 20px; margin-bottom: 20px;" />
+        </div>  
+        
+        <p style="text-align: left; max-width: 100%; margin: 0 auto; margin-bottom: 20px;">
+            In the <strong>SwiftVLA</strong>, we first extract 2D and 4D features from input images. A lightweight VLM processes 2D and 4D features with <strong>Fusion Tokens</strong>  to achieve cross-modal integration. The outputs of the <strong>Fusion Tokens</strong>  are supervised by the robot end-effector's future trajectory. During training, we randomly mask either the 2D or the 4D features, and we require the action expert to reconstruct the masked features while learning to generate actions. We show the attention mask under random masking of the 4D features. In this case, 4D features are excluded from the VLM attention, and the model is required to reconstruct the 4D features from the others.                </p>
+          </p>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section style="margin-top: 40px">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3>Incremental 4D Feature Extraction</h3>
+          <hr style="margin-top: 0px" />
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <!-- 左侧：说明文字 -->
+        <div class="col-md-7">
+            <p style="text-align: justify;">
+            We use a pretrained 4D Visual Geometry Transformer to extract 4D features from input images, 
+            utilizing both spatial and temporal cues. The method employs spatiotemporal attention, 
+            where current features interact with a temporal cache through cross-attention, 
+            integrating temporal context. The temporal cache is updated using a FIFO strategy, optimizing efficiency. 
+            By providing 4D features from certain views to the VLM and updating the cache with others, 
+            we reduce training costs while improving spatiotemporal reasoning.
+        </div>
+
+        <!-- 右侧：图片 -->
+        <div class="col-md-5 text-center">
+          <img src="img/module_details.png" 
+              class="img-fluid" 
+              style="border-radius: 8px; max-width: 100%; height: auto;" 
+              alt="Overall architecture of VLA-R1" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section style="margin-top: 40px">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 style="margin-bottom: 0px;">Fusion Tokens</h3>
+        <hr style="margin-top: 0px; margin-bottom: 20px;" />
+      </div>
+    </div>
+
+    <!-- Row for the videos -->
+    <div class="row justify-content-center">
+      <!-- 左侧：视频 -->
+      <div class="col-md-4 text-center">
+        <video autoplay loop muted playsinline class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
+          <source src="img/tra1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- 右侧：视频 -->
+      <div class="col-md-4 text-center">
+        <video autoplay loop muted playsinline class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
+          <source src="img/tra2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      <div class="col-md-4 text-center">
+        <video autoplay loop muted playsinline class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
+          <source src="img/tra31.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <!-- Row for the text -->
+    <div class="row">
+      <div class="col-12">
+        <p style="text-align: justify;">Rather than relying on heavyweight vision-language models (VLMs) to directly fuse 2D and 4D information, we introduce <strong>Fusion Tokens</strong> , a set of learnable tokens designed to interact with both 2D features and 4D spatiotemporal representations. These tokens are guided by supervision based on the future trajectory of the end-effector. Our results demonstrate that when tasked with future prediction, <strong>Fusion Tokens</strong>  significantly enhance the ability of lightweight VLMs to effectively integrate and interpret both 2D and 4D information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section style="margin-top: 40px">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 style="margin-bottom: 0px;">Mask and Reconstruction Strategy</h3> 
+        <hr style="margin-top: 0px; margin-bottom: 20px;" />
+      </div>
+    </div>
+
+    <!-- Row for the text -->
+    <div class="row">
+      <div class="col-12">
+
+        <p style="text-align: justify;">We propose a mask-and-reconstruction strategy that enhances the spatial reasoning capabilities of the VLA by incorporating 4D features during training, while maintaining efficiency during inference. This approach ensures a lightweight model suitable for resource-constrained environments, without sacrificing significant performance.</p>
+
+        <h5>Training Procedure</h5>
+        <p style="text-align: justify;">During training, we apply random masking to either the 2D or 4D features, requiring the VLA to predict actions based on the remaining modalities while also reconstructing the masked features. This encourages the model to learn geometry-aware representations, which are further refined through reconstruction losses.
+
+        <h5>Inference Procedure</h5>
+        <p style="text-align: justify;">At inference time, we discard the 4D feature inputs and retain only the 2D feature branch, resulting in a lightweight model with reduced parameters. The 4D feature extractor and reconstruction heads, which were used solely for training supervision, are removed. This compact design enables the model to maintain strong spatial and temporal awareness, while also being computationally efficient and suitable for deployment on real-world robotic platforms.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  
+<section style="margin-top: 40px">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 style="margin-bottom: 0px;">Comparison of <strong>SwiftVLA</strong>  and &pi;<sub>0</sub>  on Edge Devices</h3>
+        <hr style="margin-top: 0px; margin-bottom: 20px;" />
+      </div>
+    </div>
+
+    <!-- Row for the video -->
+    <div class="row">
+      <!-- Video -->
+      <div class="col-md-12 text-center">
+        <!-- <video controls loop muted playsinline class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
+          <source src="img/demo_comparison.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video> -->
+            <video autoplay muted loop playsinline controls style="max-width:80%; border-radius:9px;">
+              <source src="img/demo_comparison2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+      </div>
+    </div>
+
+    <!-- Row for the text -->
+    <div class="row">
+      <div class="col-12">
+
+        <p style="text-align: justify;">We provide a video that compares <strong>SwiftVLA</strong>  and &pi;<sub>0</sub>  across multiple tasks. The video consists of the following segments:</p>
+
+        <ul>
+          <li><strong>4-40s:</strong> Demonstrates the comparison between <strong>SwiftVLA</strong>  and &pi;<sub>0</sub>  on the "Fold the Cloth" task.</li>
+          <li><strong>40-60s:</strong> Displays the comparison between <strong>SwiftVLA</strong>  and &pi;<sub>0</sub>  on the "Throw the Bottle" task.</li>
+          <li><strong>60-72s:</strong> Compares <strong>SwiftVLA</strong>  and &pi;<sub>0</sub>  on the "Clean the Desk" task.</li>
+          <li><strong>72-90s:</strong> Highlights the superior error-correction capability of <strong>SwiftVLA</strong>  over &pi;<sub>0</sub> , particularly evident when handling deformable objects. In the video, we compare the two algorithms on the "Fold the Cloth" task, focusing on how each model adjusts after failure. Compared to &pi;<sub>0</sub> , <strong>SwiftVLA</strong>  recovers more quickly, with smoother motion trajectories that enable more fluid and accurate handling of deformable objects.</li>
+          <li><strong>90-132s:</strong> Shows additional examples of <strong>SwiftVLA</strong>  on the "Fold the Cloth" task.</li>
+        </ul>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Citing -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <h3>Citation</h3>
+        <hr style="margin-top: 0px" />
+        <pre class="selectable" style="background-color: #e9eeef; padding: 1.5em 1.5em; border-radius: 15px"><code>@article{ye2025vlar1,
+  title={VLA-R1: Enhancing Reasoning in Vision-Language-Action Models},
+  author={Ye, Angen and Zhang, Zeyu and Wang, Boyuan and Wang, Xiaofeng and Zhang, Dapeng and Zhu, Zheng},
+  journal={arXiv preprint arXiv:2510.01623},
+  year={2025}
+}</code></pre>
+        <hr />
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center" style="margin-bottom: 10px">
+    SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead
+  </footer>
+
+</body>
+
+</html>
