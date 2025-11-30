@@ -1,4 +1,4 @@
-# <img alt="logo" width="50" height="1432" alt="Swift_Robo_Arm_Minimal_Logo(1)" src="https://github.com/user-attachments/assets/9d572841-955c-4718-8b35-04b819d36882" /> SwiftVLA Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead
+# <img  alt="logo" width="50" height="1432" alt="Swift_Robo_Arm_Minimal_Logo(1)" src="https://github.com/user-attachments/assets/4e5d31d6-ba99-40ac-8ebc-5ea338dbd1d2" /> SwiftVLA Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead
 
 
 This is the official repository for the paper:
