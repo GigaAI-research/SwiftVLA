@@ -4,7 +4,7 @@
 This is the official repository for the paper:
 > **SwiftVLA Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead**
 >
-> Chaojun Ni\*, Cheng Chen\*, Xiaofeng Wang\*, Zheng Zhu<sup>†</sup>, Wenzhao Zheng, Boyuan Wang, Tianrun Chen<sup>†</sup>, Guosheng Zhao, Haoyun Li, Zhehao Dong, Qiang Zhang, Yun Ye, Yang Wang, Guan Huang, Wenjun Mei<sup>†</sup>
+> Chaojun Ni\*, Cheng Chen\*, Xiaofeng Wang\*, Zheng Zhu\*<sup>†</sup>, Wenzhao Zheng, Boyuan Wang, Tianrun Chen<sup>†</sup>, Guosheng Zhao, Haoyun Li, Zhehao Dong, Qiang Zhang, Yun Ye, Yang Wang, Guan Huang, Wenjun Mei<sup>†</sup>
 > 
 > \*Equal contribution. <sup>†</sup>Corresponding author.
 >
