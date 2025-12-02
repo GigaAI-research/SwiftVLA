@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-    <img width="50" height="50" alt="Swift_Robot_Arm_Vector_Logo_1_-removebg-preview" src="https://github.com/user-attachments/assets/13bdd19f-7037-4306-8d7a-afb332a3598c" />
+    <img width="50" height="50" alt="Swift_Robot_Arm_Vector_Logo_1_-removebg-preview" src="https://github.com/user-attachments/assets/13bdd19f-7037-4306-8d7a-afb332a3598c" /> SwiftVLA Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead
 </div>
 
 
