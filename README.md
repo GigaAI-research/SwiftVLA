@@ -9,7 +9,7 @@ This is the official repository for the paper:
 > 
 > \*Equal contribution. <sup>†</sup>Corresponding author.
 >
-> ### [Paper](https://arxiv.org/abs/2510.01623) | [Website](https://gigaai-research.github.io/VLA-R1)
+> ### [Paper](https://arxiv.org/abs/2512.00903) | [Website](https://gigaai-research.github.io/VLA-R1)
 
 https://github.com/user-attachments/assets/aa2e59e9-4ac2-4d47-b716-786ecc891657
 
